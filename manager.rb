@@ -44,35 +44,36 @@ class Employee
     #     end
     # end
 
-    def give_all_raises
-        @employees.each do |employee|
-            employee.give_annual_raise
-        end
-    end
-    
-    # def change_status
-    #     @active = false
-    # end
-
-    # def fire_all_employees
+    # def give_all_raises
     #     @employees.each do |employee|
-    #         employee.change_status
+    #         employee.give_annual_raise
     #     end
     # end
+    
+    def change_status
+        employee.active = false
+    end
+
+    def fire_all_employees
+        @employees.each do |employee|
+            employee.change_status
+        end
+    end
       
-  end
+  end              
   
   manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
   manager.print_info
   manager.send_report
 
-  manager.give_all_raises
+  #                 
 
   employee1.print_info
   employee2.print_info
 
-#   manager.fire_all_employees
-employee1.change_status 
+# #   manager.fire_all_employees
+# employee1.change_status 
+
 p employee1.active
 
 #   Create a method in the Manager class called fire_all_employees that loops through each of 
